@@ -371,24 +371,24 @@ public class ContactsServicePlugin implements MethodCallHandler, FlutterPlugin, 
         delegate.openContactPicker();
       } else {
         result.success(FORM_COULD_NOT_BE_OPEN);
-      }
-  }
+  //     }
+  // }
   
-  private class ContactServiceDelegateOld extends BaseContactsServiceDelegate {
-    private final PluginRegistry.Registrar registrar;
+  // private class ContactServiceDelegateOld extends BaseContactsServiceDelegate {
+  //   private final PluginRegistry.Registrar registrar;
 
-    ContactServiceDelegateOld(PluginRegistry.Registrar registrar) {
-      this.registrar = registrar;
-      registrar.addActivityResultListener(this);
-    }
+  //   ContactServiceDelegateOld(PluginRegistry.Registrar registrar) {
+  //     this.registrar = registrar;
+  //     registrar.addActivityResultListener(this);
+  //   }
 
-    @Override
-    void startIntent(Intent intent, int request) {
-      if (registrar.activity() != null) {
-        registrar.activity().startActivityForResult(intent, request);
-      } else {
-        registrar.context().startActivity(intent);
-      }
+  //   @Override
+  //   void startIntent(Intent intent, int request) {
+  //     if (registrar.activity() != null) {
+  //       registrar.activity().startActivityForResult(intent, request);
+  //     } else {
+  //       registrar.context().startActivity(intent);
+  //     }
     }
   }
 
